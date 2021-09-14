@@ -1,25 +1,25 @@
 stages:
-  - build
+  - test
   - deploy
 
-build-pages:
-  stage: build
+test-pages:
+  stage: test
   image: minidocks/mkdocs
   script:
-    - mkdocs build
+    - mkdocs build --strict --verbose --site-dir test
   artifacts:
-    untracked: true
-    expire_in: 1 hour
-  only:
+    paths:
+      - test
+  except:
     - main
 
 deploy-pages:
-  dependencies:
-    - build-pages
   stage: deploy
   image: minidocks/mkdocs
   script:
-    - apk add --no-cache git
-    - mkdocs gh-deploy
+    - mkdocs build --strict --verbose
+  artifacts:
+    paths:
+      - public
   only:
     - main
