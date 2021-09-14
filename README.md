@@ -20,8 +20,6 @@ nav:
   - Xxx: xxx.md
 ```
 
-### Build site
-`mkdocs build`
-
-### Deploy on git
-`mkdocs gh-deploy`
+### Test site locally
+`mkdocs serve`  
+and open browser on `http://127.0.0.1:8000/os4ml/`
