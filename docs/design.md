@@ -1,3 +1,3 @@
 # Design
 ## Service Architecture
-![service architecture](assets/Os4ML-Services.png)
+![service architecture](assets/Os4ML-Services.svg)
