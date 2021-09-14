@@ -19,6 +19,7 @@ deploy-pages:
   stage: deploy
   image: minidocks/mkdocs
   script:
+    - apk add --no-cache git
     - mkdocs gh-deploy
   only:
     - main
