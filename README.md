@@ -17,7 +17,7 @@ site_url: https://wogra.github.io/os4ml
 repo_url: https://github.com/WOGRA-AG/Os4ML
 nav:
   - Home: index.md
-  - Xxx: xxx.md
+  - Getting Started: microk8s.md
 ```
 
 ### Build site
