@@ -1,0 +1,24 @@
+stages:
+  - build
+  - deploy
+
+build-pages:
+  stage: build
+  image: minidocks/mkdocs
+  script:
+    - mkdocs build
+  artifacts:
+    untracked: true
+    expire_in: 1 hour
+  only:
+    - main
+
+deploy-pages:
+  dependencies:
+    - build-pages
+  stage: deploy
+  image: minidocks/mkdocs
+  script:
+    - mkdocs gh-deploy
+  only:
+    - main
