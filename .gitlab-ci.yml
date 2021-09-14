@@ -7,10 +7,15 @@ build-pages:
   image: minidocks/mkdocs
   script:
     - mkdocs build
+  artifacts:
+    untracked: true
+    expire_in: 1 hour
   only:
     - main
 
 deploy-pages:
+  dependencies:
+    - build-pages
   stage: deploy
   image: minidocks/mkdocs
   script:
