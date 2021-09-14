@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://wogra.github.io/os4ml/started/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Getting Started - Open space for Machine Learning</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Getting Started";
+    var mkdocs_page_input_path = "started.md";
+    var mkdocs_page_url = "/os4ml/started/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Open space for Machine Learning</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Getting Started</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-microk8s-with-gpu-support">Install MicroK8s with GPU support</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#install-microk8s">Install MicroK8s</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enable-gpu-support-in-microk8s">Enable GPU support in microk8s</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bugfix-containerd-gpu-support-for-microk8s">Bugfix containerd gpu support for microk8s</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ensure-nvidia-driver-is-loaded-and-device-files-are-ready">Ensure nvidia driver is loaded and device files are ready</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#restart-microk8s-and-get-node-information">Restart MicroK8s and get node information</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test-pod-with-gpu-capabilities">Test pod with GPU capabilities</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Open space for Machine Learning</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Getting Started</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/WOGRA-AG/Os4ML/edit/master/docs/started.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="getting-started">Getting Started</h1>
+<h2 id="install-microk8s-with-gpu-support">Install MicroK8s with GPU support</h2>
+<h3 id="install-microk8s">Install MicroK8s</h3>
+<p>Be sure no MicroK8s is installed, otherwise use <code>sudo snap remove microk8s --purge</code>.</p>
+<p>Install MicroK8s on Linux</p>
+<pre><code class="language-bash">sudo snap install microk8s --classic
+</code></pre>
+<p>Check the status while Kubernetes starts</p>
+<pre><code class="language-bash">microk8s status --wait-ready
+</code></pre>
+<p>Enable DNS support</p>
+<pre><code class="language-bash">microk8s enable dns
+</code></pre>
+<p><em>Caution:</em> For this GPU enabeling please do NOT use <code>microk8s enable gpu</code>. Actually this does not work on Arch, Ubuntu and all system we tried microk8s.</p>
+<h3 id="enable-gpu-support-in-microk8s">Enable GPU support in microk8s</h3>
+<p>Now we are adapting the following <a href="https://dev.to/mweibel/add-nvidia-gpu-support-to-k3s-with-containerd-4j17">article</a>.</p>
+<p>Add a demonset to the node which is responsible to enable gpu capacity (nvidia.com/gpu) for every node it is done once.</p>
+<pre><code class="language-bash">microk8s kubectl apply -f https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.14/cluster/addons/device-plugins/nvidia-gpu/daemonset.yaml
+</code></pre>
+<p>Add a label to the node for gpu support</p>
+<pre><code class="language-bash">microk8s kubectl label nodes stefan-pc cloud.google.com/gke-accelerator=true
+</code></pre>
+<h3 id="bugfix-containerd-gpu-support-for-microk8s">Bugfix containerd gpu support for microk8s</h3>
+<p>To enable the nvidia-conatiner-runtime in containerd edit the two files</p>
+<pre><code class="language-bash">sudo vim /var/snap/microk8s/current/args/containerd-template.toml
+sudo vim /var/snap/microk8s/current/args/containerd.toml
+</code></pre>
+<p>And replace</p>
+<pre><code class="language-toml">    # 'plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes' is a map from CRI RuntimeHandler strings, which specify types
+    # of runtime configurations, to the matching configurations.
+    # In this example, 'runc' is the RuntimeHandler string to match.
+    [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.runc]
+      # runtime_type is the runtime type to use in containerd e.g. io.containerd.runtime.v1.linux
+      runtime_type = &quot;io.containerd.runc.v1&quot;
+
+    [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.nvidia-container-runtime]
+      # runtime_type is the runtime type to use in containerd e.g. io.containerd.runtime.v1.linux
+      runtime_type = &quot;io.containerd.runc.v1&quot;
+
+      [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.nvidia-container-runtime.options]
+        BinaryName = &quot;nvidia-container-runtime&quot;
+
+</code></pre>
+<p>with</p>
+<pre><code class="language-toml">    # 'plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes' is a map from CRI RuntimeHandler strings, which specify types
+    # of runtime configurations, to the matching configurations.
+    # In this example, 'runc' is the RuntimeHandler string to match.
+    [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.runc]
+      # runtime_type is the runtime type to use in containerd e.g. io.containerd.runtime.v1.linux
+      runtime_type = &quot;io.containerd.runc.v1&quot;
+
+      [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.runc.options]
+        BinaryName = &quot;nvidia-container-runtime&quot;
+
+    [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.nvidia-container-runtime]
+      # runtime_type is the runtime type to use in containerd e.g. io.containerd.runtime.v1.linux
+      runtime_type = &quot;io.containerd.runc.v1&quot;
+
+      [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.nvidia-container-runtime.options]
+        BinaryName = &quot;nvidia-container-runtime&quot;
+</code></pre>
+<p>With this setting every container executed by containerd has gpu support, but that is for our use case fine.</p>
+<h3 id="ensure-nvidia-driver-is-loaded-and-device-files-are-ready">Ensure nvidia driver is loaded and device files are ready</h3>
+<p>Use the script from <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile-verifications">here</a>.</p>
+<pre><code class="language-bash">touch enable-dev-nvida.sh
+vim enable-dev-nvida.sh
+</code></pre>
+<p>Add this code</p>
+<pre><code class="language-bash">#!/bin/bash
+
+/sbin/modprobe nvidia
+
+if [ &quot;$?&quot; -eq 0 ]; then
+  # Count the number of NVIDIA controllers found.
+  NVDEVS=`lspci | grep -i NVIDIA`
+  N3D=`echo &quot;$NVDEVS&quot; | grep &quot;3D controller&quot; | wc -l`
+  NVGA=`echo &quot;$NVDEVS&quot; | grep &quot;VGA compatible controller&quot; | wc -l`
+
+  N=`expr $N3D + $NVGA - 1`
+  for i in `seq 0 $N`; do
+    mknod -m 666 /dev/nvidia$i c 195 $i
+  done
+
+  mknod -m 666 /dev/nvidiactl c 195 255
+
+else
+  exit 1
+fi
+
+/sbin/modprobe nvidia-uvm
+
+if [ &quot;$?&quot; -eq 0 ]; then
+  # Find out the major device number used by the nvidia-uvm driver
+  D=`grep nvidia-uvm /proc/devices | awk '{print $1}'`
+
+  mknod -m 666 /dev/nvidia-uvm c $D 0
+else
+  exit 1
+fi
+</code></pre>
+<p>And execute the script</p>
+<pre><code class="language-bash">chmod +x enable-dev-nvida.sh
+sudo ./enable-dev-nvida.sh
+</code></pre>
+<p>Also check that Nvidia and Cuda is present</p>
+<pre><code>nvidia-smi
+</code></pre>
+<p>Sample output</p>
+<pre><code>+-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.63.01    Driver Version: 470.63.01    CUDA Version: 11.4     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  Off  | 00000000:3B:00.0 Off |                  N/A |
+| N/A   54C    P0    N/A /  N/A |    249MiB /  2002MiB |     10%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+</code></pre>
+<h3 id="restart-microk8s-and-get-node-information">Restart MicroK8s and get node information</h3>
+<pre><code class="language-bash">microk8s stop &amp;&amp; microk8s start &amp;&amp; microk8s status --wait-ready
+microk8s kubectl describe node
+</code></pre>
+<p>You should now get <code>nvidia.com/gpu</code> capacity like this</p>
+<pre><code>Capacity:
+  cpu:                8
+  ephemeral-storage:  473841544Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16030004Ki
+  nvidia.com/gpu:     1
+  pods:               110
+</code></pre>
+<h3 id="test-pod-with-gpu-capabilities">Test pod with GPU capabilities</h3>
+<p>To test the gpu support we create a simple deployment yaml file</p>
+<pre><code class="language-bash">vim test-gpu.yaml
+</code></pre>
+<p>with content</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: cuda-vector-add
+spec:
+  restartPolicy: OnFailure
+  containers:
+    - name: cuda-vector-add
+      image: &quot;k8s.gcr.io/cuda-vector-add:v0.1&quot;
+      resources:
+        limits:
+          nvidia.com/gpu: 1
+        requests:
+          nvidia.com/gpu: 1
+</code></pre>
+<p>Now start the deployment and look for the results. This can take some time to pull the image.</p>
+<pre><code class="language-bash">sudo microk8s kubectl apply -f test-gpu.yaml
+microk8s kubectl describe pod cuda-vector-add
+microk8s kubectl logs cuda-vector-add
+</code></pre>
+<p>The successful log output shows that the GPU is working and can now be used.</p>
+<pre><code>[Vector addition of 50000 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 196 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Test PASSED
+Done
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/WOGRA-AG/Os4ML/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
