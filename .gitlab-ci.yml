@@ -1,0 +1,19 @@
+stages:
+  - build
+  - deploy
+
+build-pages:
+  stage: build
+  image: minidocks/mkdocs
+  script:
+    - mkdocs build
+  only:
+    - main
+
+deploy-pages:
+  stage: deploy
+  image: minidocks/mkdocs
+  script:
+    - mkdocs gh-deploy
+  only:
+    - main
