@@ -22,4 +22,8 @@ nav:
 
 ### Test site locally
 `mkdocs serve`  
-and open browser on `http://127.0.0.1:8000/os4ml/`
+and open a browser of your choice on `http://127.0.0.1:8000/os4ml/`
+
+### Deploy
+To release a new Page, just push the new corresponding branch to the repository and create a merge request on the main branch.  
+The CI/CD Pipeline will autmatically build and deploy the new page, if the merge request gets accepted.
