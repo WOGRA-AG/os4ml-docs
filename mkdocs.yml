@@ -1,8 +1,12 @@
-site_name: Open space for Machine Learning
+site_name: Open Space for Machine Learning
 site_url: https://wogra.github.io/os4ml
 repo_url: https://github.com/WOGRA-AG/Os4ML
 nav:
   - Home: index.md
-  - Getting Started: started.md
+  - Getting Started: getting_started.md
+  - GPU support:
+      k3d: gpu_support/k3d.md
+      MicroK8s: gpu_support/microk8s.md
   - Design: design.md
-theme: readthedocs
+  - About Us: about_us.md
+theme: material

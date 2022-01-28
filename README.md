@@ -1,18 +1,21 @@
 # os4ml-docs
-Documentation for [Open space 4 Machine Learning](https://github.com/WOGRA-AG/Os4ML).  
-This project is built using [mkdocs](https://www.mkdocs.org). This is a test.
+Documentation for [Open Space 4 Machine Learning](https://github.
+com/WOGRA-AG/Os4ML).  
+
+This project is built using [mkdocs](https://www.mkdocs.org).
+
 ## Workflow
 Clone Repository and navigate to folder
 
 ### Install mkdocs
-`pip install mkdocs`
+Run `pip install mkdocs` and `pip install mkdocs-material`.
 
 ### Adding pages
 Create a new file with the content of the new page  
 `touch docs/xxx.md`  
 and add it to the `nav` section of the `mkdocs.yml` file.
 ```yaml
-site_name: Ms4ML
+site_name: Os4ML
 site_url: https://wogra.github.io/os4ml
 repo_url: https://github.com/WOGRA-AG/Os4ML
 nav:
@@ -21,8 +24,8 @@ nav:
 ```
 
 ### Test site locally
-`mkdocs serve`  
-and open a browser of your choice on `http://127.0.0.1:8000/os4ml/`
+Run `python3 -m mkdocs serve` and open a browser of your choice on 
+`http://127.0.0.1:8000/os4ml/`
 
 ### Deploy
 To release a new Page, just push the new corresponding branch to the repository and create a merge request on the main branch.  
