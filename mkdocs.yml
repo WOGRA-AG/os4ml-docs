@@ -11,7 +11,6 @@ nav:
   - About Us: about_us.md
 theme:
   name: material
-  custom_dir: overrides/
   palette:
   - scheme: default
     primary: blue
