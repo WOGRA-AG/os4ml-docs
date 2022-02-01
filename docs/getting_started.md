@@ -9,10 +9,12 @@ With [k3d][] you can do it like this, for example
 k3d cluster create os4ml-cluster
 ```
 
-If you want to do machine learning, GPUs are always an issue. Unfortunately, 
-GPUs are known to be a topic of their own. For more information on how to 
-use GPUs please read the [support for k3d](gpu_support/k3d.md) or the [support 
-for MicroK8s](gpu_support/microk8s.md).
+If you want to do machine learning, you want to use GPUs. [Os4ML][] uses 
+automatically uses GPUs if they are available in the Kubernetes cluster.
+Unfortunately, GPUs are known to be a topic of their own. Nonetheless, we 
+provide some helpful information on how to set up a kubernetes cluster with 
+gpu support. Please read the [support for k3d](gpu_support/k3d.md) or the 
+[support for MicroK8s](gpu_support/microk8s.md) for more details.
 
 ## Installation
 Nobody wants complicated installations. We neither. For this reason
@@ -47,3 +49,4 @@ asked for credentials, there exists a standard user with email
 [Kubeflow]: https://www.kubeflow.org/
 [k3d]: https://k3d.io
 [Terraform]: https://www.terraform.io/
+[Os4ML]: https://github.com/WOGRA-AG/Os4ML
