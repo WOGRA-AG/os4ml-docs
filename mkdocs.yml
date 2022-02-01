@@ -4,9 +4,36 @@ repo_url: https://github.com/WOGRA-AG/Os4ML
 nav:
   - Home: index.md
   - Getting Started: getting_started.md
+  - Design: design.md
   - GPU support:
       k3d: gpu_support/k3d.md
       MicroK8s: gpu_support/microk8s.md
-  - Design: design.md
   - About Us: about_us.md
-theme: material
+theme:
+  name: material
+  custom_dir: overrides/
+  palette:
+  - scheme: default
+    primary: blue
+    accent: amber
+    toggle:
+      icon: material/lightbulb
+      name: Switch to light mode
+  - scheme: slate
+    primary: blue
+    accent: amber
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to dark mode
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/wogra-ag/posts/?feedView=all
+    - icon: fontawesome/brands/github
+      link: https://github.com/WOGRA-AG
+    - icon: fontawesome/solid/globe
+      link: https://wogra.com
+    - icon: fontawesome/solid/envelope
+      link: mailto:info@wogra.com
+
+copyright: <a href="https://wogra.com/impressum/">Impressum</a>
