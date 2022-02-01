@@ -379,12 +379,12 @@
                 
                 <h1 id="gpu-support-with-k3d">GPU support with k3d</h1>
 <p><a href="https://k3d.io">k3d</a> says it's 'a lightweight wrapper to run k3s (Rancher Lab’s minimal 
-Kubernetes distribution) in docker'. Well yes, they are right, and they are 
-great. This is the reason why we use <a href="https://k3d.io">k3d</a> for our daily development work. 
-For this reason it can be assumed that Os4ML runs stably on <a href="https://k3d.io">k3d</a>.</p>
-<p>It's quite nice to equip k3d with gpu support as described 
-<a href="https://k3d.io/v5.2.2/usage/advanced/cuda/">here</a>.If you have problems 
-building the Docker image, remember to install the 
+Kubernetes distribution) in docker'. Well yes, that's what it does, and it 
+does it great. We use <a href="https://k3d.io">k3d</a> for daily development. Thus, you can assume 
+that Os4ML runs stably on <a href="https://k3d.io">k3d</a>.</p>
+<p>So, what about GPU support? <a href="https://k3d.io">k3d</a> describes it in their documentation
+<a href="https://k3d.io/v5.2.2/usage/advanced/cuda/">here</a>.If you have 
+problems building the Docker image, remember to install the 
 <code>nvidia-container-toolkit</code> in addition to the <code>nvidia-container-runtime</code>.</p>
                 
               
