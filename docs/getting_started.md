@@ -38,7 +38,7 @@ including a fully functional [Kubeflow][]. And that's how you get it:
 kubectl port-forward -n istio-system svc/istio-ingressgateway 8000:80
 ```
 Now, open `localhost:8000` for [Kubeflow][] or `localhost:8000/os4ml/` for 
-Os4ML (don't forget the slash). As described 
+[Os4ML][] (don't forget the slash). As described 
 [here](https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/),
 the connection is terminated when the command is aborted. Whenever you are 
 asked for credentials, there exists a standard user with email 
