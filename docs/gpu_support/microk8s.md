@@ -1,4 +1,15 @@
-# MicroK8s with GPU support
+# GPU support with MicroK8s
+
+Canonical promotes [MicroK8s](https://microk8s.io/) as 'Low-ops, minimal 
+production Kubernetes, for devs, cloud, clusters, workstations, Edge and 
+IoT'. GPU support is provided as add-on using th command `microk8s enable 
+gpu` as described [here](https://microk8s.io/docs/addon-gpu).
+
+Unfortunately, this fails from time to time. In the following we describe 
+an alternative procedure to enable gpu support for microk8s. Unfortunately,
+due to time constraints, the instructions cannot be continuously updated. 
+Please let us know if something is no longer up to date so that this can 
+be adjusted accordingly.
 
 ## Install MicroK8s
 Be sure no MicroK8s is installed, otherwise use `sudo snap remove microk8s --purge`.
@@ -21,8 +32,6 @@ Enable DNS support
 microk8s enable dns
 ```
 
-*Caution:* For this GPU enabeling please do NOT use `microk8s enable gpu`. Actually this does not work on Arch, Ubuntu and all system we tried microk8s.
-
 ## Enable GPU support in microk8s
 Now we are adapting the following [article](https://dev.to/mweibel/add-nvidia-gpu-support-to-k3s-with-containerd-4j17).
 
@@ -34,7 +43,7 @@ microk8s kubectl apply -f https://raw.githubusercontent.com/kubernetes/kubernete
 Add a label to the node for gpu support
 
 ```bash
-microk8s kubectl label nodes stefan-pc cloud.google.com/gke-accelerator=true
+microk8s kubectl label nodes DEVICE_NAME cloud.google.com/gke-accelerator=true
 ```
 ## Bugfix containerd gpu support for microk8s
 To enable the nvidia-conatiner-runtime in containerd edit the two files
@@ -81,7 +90,8 @@ with
       [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.nvidia-container-runtime.options]
         BinaryName = "nvidia-container-runtime"
 ```
-With this setting every container executed by containerd has gpu support, but that is for our use case fine.
+With this setting every container executed by containerd has gpu support, 
+but that is for our use case fine.
 
 ## Ensure nvidia driver is loaded and device files are ready
 Use the script from [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile-verifications).
@@ -200,7 +210,8 @@ spec:
           nvidia.com/gpu: 1
 ```
 
-Now start the deployment and look for the results. This can take some time to pull the image.
+Now start the deployment and look for the results. This can take some time 
+to  pull the image.
 
 ```bash
 sudo microk8s kubectl apply -f test-gpu.yaml
