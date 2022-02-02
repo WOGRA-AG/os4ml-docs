@@ -264,46 +264,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Design
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Design
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#service-architecture" class="md-nav__link">
-    Service Architecture
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cluster-architecture" class="md-nav__link">
-    Cluster Architecture
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -397,28 +360,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#service-architecture" class="md-nav__link">
-    Service Architecture
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cluster-architecture" class="md-nav__link">
-    Cluster Architecture
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -435,10 +376,32 @@
                 
                 
                 <h1 id="design">Design</h1>
-<h2 id="service-architecture">Service Architecture</h2>
-<p><img alt="service architecture" src="../assets/Os4ML-Services.svg" />  </p>
-<h2 id="cluster-architecture">Cluster Architecture</h2>
+<p>As already mentioned in the introductory words the project focuses on easy 
+installation, intuitive UI/UX and comfortable machine learning. </p>
+<p>In order to achieve this goal with limited resources, <a href="https://github.com/WOGRA-AG/Os4ML">Os4ML</a> is based 
+on a powerful substructure, more precisely <a href="https://www.kubeflow.org/">Kubeflow</a>. With Kubeflow 
+under the hood, complex machine learning tasks can be performed. Thus, 
+<a href="https://github.com/WOGRA-AG/Os4ML">Os4ML</a> benefits from the development performance of a strong open source 
+community. This allows us to concentrate on high-level ai solutions.</p>
+<p>With the choice of <a href="https://www.kubeflow.org/">Kubeflow</a> as the substructure, the choice of 
+<a href="https://kubernetes.io/">Kubernetes</a> as the abstraction layer to the hardware ultimately falls. 
+<a href="https://github.com/WOGRA-AG/Os4ML">Os4ML</a> and Kubeflow operate in a single Kubernetes cluster in separate 
+namespaces.</p>
 <p><img alt="Cluster Architecture" src="../assets/Os4ML-Kube-Architecture.svg" /></p>
+<p>The Kubernetes cluster serves as an additional abstraction layer during 
+installation. The aim is to provide a uniform installation for all 
+kubernetes service providers and implementations, such as <a href="https://k3s.io">k3s</a> or 
+<a href="https://microk8s.io/">MicroK8s</a>. For this reason we have decided to use terraform <a href="https://www.terraform.io/">Terraform</a>
+. In this way, a terraform module for Kubeflow has already been made 
+available as open source <a href="https://registry.terraform.io/modules/WOGRA-AG/kubeflow/kustomization/latest">here</a>. </p>
+<p>Finally, the <a href="https://angular.io/">Angular</a> frontend. A large part of the work will consist of 
+providing the user with the power of <a href="https://www.kubeflow.org/">Kubeflow</a> without requiring AI 
+knowledge. In order to support this, a number of other microservices follow,
+e.g. an objectstore-manager which allows access to a S3 compatible object 
+storage like <a href="https://min.io/">MinIO</a>.</p>
+<p><img alt="service architecture" src="../assets/Os4ML-Services.svg" /></p>
+<p>The first tangible demo version awaits you at the end of March 2022. Get 
+ready!</p>
                 
               
               
