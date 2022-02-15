@@ -4,7 +4,7 @@ stages:
 
 build-pages:
   stage: build
-  image: minidocks/mkdocs
+  image: squidfunk/mkdocs-material
   script:
     - mkdocs build
   artifacts:
