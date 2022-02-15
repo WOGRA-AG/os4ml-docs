@@ -34,5 +34,8 @@ extra:
       link: https://wogra.com
     - icon: fontawesome/solid/envelope
       link: mailto:info@wogra.com
+  analytics:
+    provider: google
+    property: G-E2E1CYEJH9
 
 copyright: <a href="https://wogra.com/impressum/">Impressum</a>
