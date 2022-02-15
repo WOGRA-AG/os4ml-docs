@@ -6,7 +6,7 @@ build-pages:
   stage: build
   image: squidfunk/mkdocs-material
   script:
-    - mkdocs build
+    - build
   artifacts:
     untracked: true
     expire_in: 1 hour
