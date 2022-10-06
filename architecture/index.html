@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://wogra.github.io/os4ml/gpu_support/microk8s/">
+        <link rel="canonical" href="https://wogra.github.io/os4ml/architecture/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/OS4ML_Logo_Small.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.4">
     
     
       
-        <title>MicroK8s - Open Space for Machine Learning</title>
+        <title>Architecture - Open Space for Machine Learning</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.80dcb947.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.80dcb947.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -39,7 +39,9 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -56,7 +58,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
     
@@ -68,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gpu-support-with-microk8s" class="md-skip">
+        <a href="#architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -82,10 +84,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Open Space for Machine Learning" class="md-header__button md-logo" aria-label="Open Space for Machine Learning" data-md-component="logo">
+    <a href=".." title="Open Space for Machine Learning" class="md-header__button md-logo" aria-label="Open Space for Machine Learning" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../assets/OS4ML_Logo_White_Large.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MicroK8s
+              Architecture
             
           </span>
         </div>
@@ -112,7 +113,7 @@
         
           
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
@@ -121,7 +122,7 @@
         
           
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
@@ -202,10 +203,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Open Space for Machine Learning" class="md-nav__button md-logo" aria-label="Open Space for Machine Learning" data-md-component="logo">
+    <a href=".." title="Open Space for Machine Learning" class="md-nav__button md-logo" aria-label="Open Space for Machine Learning" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../assets/OS4ML_Logo_White_Large.png" alt="logo">
 
     </a>
     Open Space for Machine Learning
@@ -233,8 +233,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        Home
+      <a href=".." class="md-nav__link">
+        Os4ML
       </a>
     </li>
   
@@ -248,8 +248,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_started/" class="md-nav__link">
-        Getting Started
+      <a href="../installation/" class="md-nav__link">
+        Installation
       </a>
     </li>
   
@@ -259,63 +259,6 @@
       
       
 
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/" class="md-nav__link">
-        Design
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
-          GPU support
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="GPU support" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          GPU support
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../k3d/" class="md-nav__link">
-        k3d
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
   
   
     
@@ -329,83 +272,10 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          MicroK8s
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        MicroK8s
+        Architecture
       </a>
       
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install-microk8s" class="md-nav__link">
-    Install MicroK8s
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enable-gpu-support-in-microk8s" class="md-nav__link">
-    Enable GPU support in microk8s
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bugfix-containerd-gpu-support-for-microk8s" class="md-nav__link">
-    Bugfix containerd gpu support for microk8s
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ensure-nvidia-driver-is-loaded-and-device-files-are-ready" class="md-nav__link">
-    Ensure nvidia driver is loaded and device files are ready
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#restart-microk8s-and-get-node-information" class="md-nav__link">
-    Restart MicroK8s and get node information
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-pod-with-gpu-capabilities" class="md-nav__link">
-    Test pod with GPU capabilities
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -418,7 +288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about_us/" class="md-nav__link">
+      <a href="../about_us/" class="md-nav__link">
         About Us
       </a>
     </li>
@@ -445,56 +315,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install-microk8s" class="md-nav__link">
-    Install MicroK8s
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enable-gpu-support-in-microk8s" class="md-nav__link">
-    Enable GPU support in microk8s
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bugfix-containerd-gpu-support-for-microk8s" class="md-nav__link">
-    Bugfix containerd gpu support for microk8s
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ensure-nvidia-driver-is-loaded-and-device-files-are-ready" class="md-nav__link">
-    Ensure nvidia driver is loaded and device files are ready
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#restart-microk8s-and-get-node-information" class="md-nav__link">
-    Restart MicroK8s and get node information
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-pod-with-gpu-capabilities" class="md-nav__link">
-    Test pod with GPU capabilities
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -507,188 +327,22 @@
                 
                   
 
-  <a href="https://github.com/WOGRA-AG/Os4ML/edit/master/docs/gpu_support/microk8s.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/WOGRA-AG/Os4ML/edit/master/docs/architecture.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="gpu-support-with-microk8s">GPU support with MicroK8s</h1>
-<p>Canonical promotes <a href="https://microk8s.io/">MicroK8s</a> as 'Low-ops, minimal 
-production Kubernetes, for devs, cloud, clusters, workstations, Edge and 
-IoT'. GPU support is provided as add-on using th command <code>microk8s enable 
-gpu</code> as described <a href="https://microk8s.io/docs/addon-gpu">here</a>.</p>
-<p>Unfortunately, this fails from time to time. In the following we describe 
-an alternative procedure to enable gpu support for microk8s. Unfortunately,
-due to time constraints, the instructions cannot be continuously updated. 
-Please let us know if something is no longer up to date so that this can 
-be adjusted accordingly.</p>
-<h2 id="install-microk8s">Install MicroK8s</h2>
-<p>Be sure no MicroK8s is installed, otherwise use <code>sudo snap remove microk8s --purge</code>.</p>
-<p>Install MicroK8s on Linux</p>
-<pre><code class="language-bash">sudo snap install microk8s --classic
-</code></pre>
-<p>Check the status while Kubernetes starts</p>
-<pre><code class="language-bash">microk8s status --wait-ready
-</code></pre>
-<p>Enable DNS support</p>
-<pre><code class="language-bash">microk8s enable dns
-</code></pre>
-<h2 id="enable-gpu-support-in-microk8s">Enable GPU support in microk8s</h2>
-<p>Now we are adapting the following <a href="https://dev.to/mweibel/add-nvidia-gpu-support-to-k3s-with-containerd-4j17">article</a>.</p>
-<p>Add a demonset to the node which is responsible to enable gpu capacity (nvidia.com/gpu) for every node it is done once.</p>
-<pre><code class="language-bash">microk8s kubectl apply -f https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.14/cluster/addons/device-plugins/nvidia-gpu/daemonset.yaml
-</code></pre>
-<p>Add a label to the node for gpu support</p>
-<pre><code class="language-bash">microk8s kubectl label nodes DEVICE_NAME cloud.google.com/gke-accelerator=true
-</code></pre>
-<h2 id="bugfix-containerd-gpu-support-for-microk8s">Bugfix containerd gpu support for microk8s</h2>
-<p>To enable the nvidia-conatiner-runtime in containerd edit the two files</p>
-<pre><code class="language-bash">sudo vim /var/snap/microk8s/current/args/containerd-template.toml
-sudo vim /var/snap/microk8s/current/args/containerd.toml
-</code></pre>
-<p>And replace</p>
-<pre><code class="language-toml">    # 'plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes' is a map from CRI RuntimeHandler strings, which specify types
-    # of runtime configurations, to the matching configurations.
-    # In this example, 'runc' is the RuntimeHandler string to match.
-    [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.runc]
-      # runtime_type is the runtime type to use in containerd e.g. io.containerd.runtime.v1.linux
-      runtime_type = &quot;io.containerd.runc.v1&quot;
-
-    [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.nvidia-container-runtime]
-      # runtime_type is the runtime type to use in containerd e.g. io.containerd.runtime.v1.linux
-      runtime_type = &quot;io.containerd.runc.v1&quot;
-
-      [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.nvidia-container-runtime.options]
-        BinaryName = &quot;nvidia-container-runtime&quot;
-
-</code></pre>
-<p>with</p>
-<pre><code class="language-toml">    # 'plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes' is a map from CRI RuntimeHandler strings, which specify types
-    # of runtime configurations, to the matching configurations.
-    # In this example, 'runc' is the RuntimeHandler string to match.
-    [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.runc]
-      # runtime_type is the runtime type to use in containerd e.g. io.containerd.runtime.v1.linux
-      runtime_type = &quot;io.containerd.runc.v1&quot;
-
-      [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.runc.options]
-        BinaryName = &quot;nvidia-container-runtime&quot;
-
-    [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.nvidia-container-runtime]
-      # runtime_type is the runtime type to use in containerd e.g. io.containerd.runtime.v1.linux
-      runtime_type = &quot;io.containerd.runc.v1&quot;
-
-      [plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.nvidia-container-runtime.options]
-        BinaryName = &quot;nvidia-container-runtime&quot;
-</code></pre>
-<p>With this setting every container executed by containerd has gpu support, 
-but that is for our use case fine.</p>
-<h2 id="ensure-nvidia-driver-is-loaded-and-device-files-are-ready">Ensure nvidia driver is loaded and device files are ready</h2>
-<p>Use the script from <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile-verifications">here</a>.</p>
-<pre><code class="language-bash">touch enable-dev-nvida.sh
-vim enable-dev-nvida.sh
-</code></pre>
-<p>Add this code</p>
-<pre><code class="language-bash">#!/bin/bash
-
-/sbin/modprobe nvidia
-
-if [ &quot;$?&quot; -eq 0 ]; then
-  # Count the number of NVIDIA controllers found.
-  NVDEVS=`lspci | grep -i NVIDIA`
-  N3D=`echo &quot;$NVDEVS&quot; | grep &quot;3D controller&quot; | wc -l`
-  NVGA=`echo &quot;$NVDEVS&quot; | grep &quot;VGA compatible controller&quot; | wc -l`
-
-  N=`expr $N3D + $NVGA - 1`
-  for i in `seq 0 $N`; do
-    mknod -m 666 /dev/nvidia$i c 195 $i
-  done
-
-  mknod -m 666 /dev/nvidiactl c 195 255
-
-else
-  exit 1
-fi
-
-/sbin/modprobe nvidia-uvm
-
-if [ &quot;$?&quot; -eq 0 ]; then
-  # Find out the major device number used by the nvidia-uvm driver
-  D=`grep nvidia-uvm /proc/devices | awk '{print $1}'`
-
-  mknod -m 666 /dev/nvidia-uvm c $D 0
-else
-  exit 1
-fi
-</code></pre>
-<p>And execute the script</p>
-<pre><code class="language-bash">chmod +x enable-dev-nvida.sh
-sudo ./enable-dev-nvida.sh
-</code></pre>
-<p>Also check that Nvidia and Cuda is present</p>
-<pre><code>nvidia-smi
-</code></pre>
-<p>Sample output</p>
-<pre><code>+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 470.63.01    Driver Version: 470.63.01    CUDA Version: 11.4     |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                               |                      |               MIG M. |
-|===============================+======================+======================|
-|   0  NVIDIA GeForce ...  Off  | 00000000:3B:00.0 Off |                  N/A |
-| N/A   54C    P0    N/A /  N/A |    249MiB /  2002MiB |     10%      Default |
-|                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
-</code></pre>
-<h2 id="restart-microk8s-and-get-node-information">Restart MicroK8s and get node information</h2>
-<pre><code class="language-bash">microk8s stop &amp;&amp; microk8s start &amp;&amp; microk8s status --wait-ready
-microk8s kubectl describe node
-</code></pre>
-<p>You should now get <code>nvidia.com/gpu</code> capacity like this</p>
-<pre><code>Capacity:
-  cpu:                8
-  ephemeral-storage:  473841544Ki
-  hugepages-1Gi:      0
-  hugepages-2Mi:      0
-  memory:             16030004Ki
-  nvidia.com/gpu:     1
-  pods:               110
-</code></pre>
-<h2 id="test-pod-with-gpu-capabilities">Test pod with GPU capabilities</h2>
-<p>To test the gpu support we create a simple deployment yaml file</p>
-<pre><code class="language-bash">vim test-gpu.yaml
-</code></pre>
-<p>with content</p>
-<pre><code class="language-yaml">apiVersion: v1
-kind: Pod
-metadata:
-  name: cuda-vector-add
-spec:
-  restartPolicy: OnFailure
-  containers:
-    - name: cuda-vector-add
-      image: &quot;k8s.gcr.io/cuda-vector-add:v0.1&quot;
-      resources:
-        limits:
-          nvidia.com/gpu: 1
-        requests:
-          nvidia.com/gpu: 1
-</code></pre>
-<p>Now start the deployment and look for the results. This can take some time 
-to  pull the image.</p>
-<pre><code class="language-bash">sudo microk8s kubectl apply -f test-gpu.yaml
-microk8s kubectl describe pod cuda-vector-add
-microk8s kubectl logs cuda-vector-add
-</code></pre>
-<p>The successful log output shows that the GPU is working and can now be used.</p>
-<pre><code>[Vector addition of 50000 elements]
-Copy input data from the host memory to the CUDA device
-CUDA kernel launch with 196 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Test PASSED
-Done
-</code></pre>
+<h1 id="architecture">Architecture</h1>
+<p><a href="https://github.com/WOGRA-AG/Os4ML">Os4ML</a> is designed as open source cloud-native application which runs on 
+<a href="https://kubernetes.io/">Kubernetes</a> clusters. On the one hand it consists of a set of multiple 
+python services using <a href="https://github.com/tiangolo/fastapi">FastAPI</a> and an <a href="https://angular.io/">Angular</a> frontend. On the other 
+hand it uses standard frameworks for common problems like <a href="https://github.com/keycloak/keycloak">Keycloak</a> for 
+authorization, <a href="https://github.com/istio/istio">Istio</a> as ingress gateway, [Mino][] as high performance
+object storage and <a href="https://www.kubeflow.org/">Kubeflow</a> Pipelines as workflow engine. Thus, 
+<a href="https://github.com/WOGRA-AG/Os4ML">Os4ML</a> benefits from the development performance of a strong open source 
+community. This allows us to concentrate on high-level AI solutions.</p>
+<p><img alt="Cluster Architecture" src="../assets/OS4ML_Architekture.png" /></p>
 
 
 
@@ -709,7 +363,7 @@ Done
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../k3d/" class="md-footer__link md-footer__link--prev" aria-label="Previous: k3d" rel="prev">
+        <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -718,14 +372,14 @@ Done
               <span class="md-footer__direction">
                 Previous
               </span>
-              k3d
+              Installation
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../about_us/" class="md-footer__link md-footer__link--next" aria-label="Next: About Us" rel="next">
+        <a href="../about_us/" class="md-footer__link md-footer__link--next" aria-label="Next: About Us" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -803,10 +457,10 @@ Done
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
       
     
   </body>
