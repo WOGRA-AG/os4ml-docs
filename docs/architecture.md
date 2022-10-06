@@ -3,7 +3,7 @@
 [Kubernetes][] clusters. On the one hand it consists of a set of multiple 
 python services using [FastAPI][] and an [Angular][] frontend. On the other 
 hand it uses standard frameworks for common problems like [Keycloak][] for 
-authorization, [Istio][] as ingress gateway, [Mino][] as high performance
+authorization, [Istio][] as ingress gateway, [MinIO][] as high performance
 object storage and [Kubeflow][] Pipelines as workflow engine. Thus, 
 [Os4ML][] benefits from the development performance of a strong open source 
 community. This allows us to concentrate on high-level AI solutions.
