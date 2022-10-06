@@ -2,25 +2,20 @@ site_name: Open Space for Machine Learning
 site_url: https://wogra.github.io/os4ml
 repo_url: https://github.com/WOGRA-AG/Os4ML
 nav:
-  - Home: index.md
-  - Getting Started: getting_started.md
-  - Design: design.md
-  - GPU support:
-      k3d: gpu_support/k3d.md
-      MicroK8s: gpu_support/microk8s.md
+  - Os4ML: index.md
+  - Installation: installation.md
+  - Architecture: architecture.md
   - About Us: about_us.md
 theme:
   name: material
+  logo: assets/OS4ML_Logo_White_Large.png
+  favicon: assets/OS4ML_Logo_Small.png
   palette:
   - scheme: default
-    primary: blue
-    accent: amber
     toggle:
       icon: material/lightbulb
       name: Switch to light mode
   - scheme: slate
-    primary: blue
-    accent: amber
     toggle:
       icon: material/lightbulb-outline
       name: Switch to dark mode
@@ -34,5 +29,8 @@ extra:
       link: https://wogra.com
     - icon: fontawesome/solid/envelope
       link: mailto:info@wogra.com
+
+extra_css:
+  - stylesheets/extra.css
 
 copyright: <a href="https://wogra.com/impressum/">Impressum</a>
