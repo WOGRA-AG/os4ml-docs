@@ -4,6 +4,7 @@ repo_url: https://github.com/WOGRA-AG/Os4ML
 nav:
   - Os4ML: index.md
   - Installation: installation.md
+  - Tutorial: tutorial.md
   - Architecture: architecture.md
   - About Us: about_us.md
 theme:

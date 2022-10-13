@@ -1,4 +1,8 @@
-# How to load a downloaded Model
+# Tutorial
+
+TODO fast-lane
+
+## Download Model
 After a solution is successfully created, you can download the trained model.
 
 You can load the extracted zip file with the following code to get the LudwigModel:
