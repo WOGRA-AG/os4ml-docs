@@ -10,4 +10,4 @@ It supports the following tasks:
 - Regression
 
 
-[ludwig]: (https://ludwig.ai/latest/).
+[ludwig]: https://ludwig.ai/latest/

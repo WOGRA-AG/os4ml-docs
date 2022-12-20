@@ -36,9 +36,6 @@ mnist_test
 ```
 
 
-
-
-
 [Titanic dataset csv]: assets/datasets/titanic.csv
 [Titanic dataset excel]: assets/datasets/titanic.xlsx
 [Mnist zip]: assets/datasets/mnist_test.zip
