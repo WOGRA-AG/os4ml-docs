@@ -5,6 +5,8 @@ nav:
   - Os4ML: index.md
   - Installation: installation.md
   - Tutorial: tutorial.md
+  - File Formats: file_formats.md
+  - Solvers: solvers.md
   - Architecture: architecture.md
   - About Us: about_us.md
 theme:
