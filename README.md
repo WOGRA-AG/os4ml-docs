@@ -1,6 +1,7 @@
 # os4ml-docs
-Documentation for [Open Space 4 Machine Learning](https://github.
-com/WOGRA-AG/Os4ML).  
+Documentation for [Open Space 4 Machine Learning](https://github.com/WOGRA-AG/Os4ML).  
+
+The latest version is hosted at [here](https://wogra-ag.github.io/os4ml-docs/).
 
 This project is built using [mkdocs](https://www.mkdocs.org).
 
