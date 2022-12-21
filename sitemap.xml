@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://wogra.github.io/os4ml/introduction/</loc>
+         <lastmod>2022-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://wogra.github.io/os4ml/solvers/</loc>
          <lastmod>2022-12-21</lastmod>
          <changefreq>daily</changefreq>
