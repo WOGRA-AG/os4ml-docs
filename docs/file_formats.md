@@ -35,7 +35,19 @@ mnist_test
 ...
 ```
 
+## Scripts
+
+| type          | suffix | example         |
+|---------------|--------|-----------------|
+| python script | .py    | [Python script] |
+
+You can also upload python scripts that create a [pandas dataframe].
+The script should save the dataframe as a csv without index in the location specified by the `--output` arg.
+
 
 [Titanic dataset csv]: assets/datasets/titanic.csv
 [Titanic dataset excel]: assets/datasets/titanic.xlsx
 [Mnist zip]: assets/datasets/mnist_test.zip
+[Python script]: assets/datasets/dataframe_script.py
+
+[pandas dataframe]: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
