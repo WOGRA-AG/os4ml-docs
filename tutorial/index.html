@@ -297,6 +297,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#run-fast-lane" class="md-nav__link">
+    Run Fast-lane
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#download-model" class="md-nav__link">
     Download Model
   </a>
@@ -307,6 +314,36 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file_formats/" class="md-nav__link">
+        File Formats
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solvers/" class="md-nav__link">
+        Solvers
+      </a>
     </li>
   
 
@@ -368,6 +405,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#run-fast-lane" class="md-nav__link">
+    Run Fast-lane
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#download-model" class="md-nav__link">
     Download Model
   </a>
@@ -395,7 +439,18 @@
 
 
 <h1 id="tutorial">Tutorial</h1>
-<p>TODO fast-lane</p>
+<h2 id="run-fast-lane">Run Fast-lane</h2>
+<ol>
+<li>Open get started dialog in the bottom left</li>
+<li>Choose a name for the databag</li>
+<li>Upload the dataset file</li>
+<li>Either upload the file directly of pass a valid url to it</li>
+<li>See <a href="../file_formats/">File formats</a> for more information on the supported file formats.</li>
+<li>Proceed and wait until the dataset is uploaded and inspected (this may take a while)</li>
+<li>Select the column you want to predict</li>
+<li>Choose a name and a solver for the Solution. See <a href="../solvers/">Solvers</a> for more information on the available solvers.</li>
+<li>Wait until the solver is done</li>
+</ol>
 <h2 id="download-model">Download Model</h2>
 <p>After a solution is successfully created, you can download the trained model.</p>
 <p>You can load the extracted zip file with the following code to get the LudwigModel:</p>
@@ -441,13 +496,13 @@ model = LudwigModel.load(path_to_extracted_zip)
       
       
         
-        <a href="../architecture/" class="md-footer__link md-footer__link--next" aria-label="Next: Architecture" rel="next">
+        <a href="../file_formats/" class="md-footer__link md-footer__link--next" aria-label="Next: File Formats" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Architecture
+              File Formats
             </div>
           </div>
           <div class="md-footer__button md-icon">
