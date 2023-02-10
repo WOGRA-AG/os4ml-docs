@@ -12,6 +12,15 @@ The following file formats are supported:
 - The first row contains the names of the columns.
 - Only the first sheet of the Excel file is used.
 
+### csv format
+use standard csv files that meet the [RFC 4180] standard, e.g. this would be a valid csv file
+
+```
+name,number,double
+"Ford, Henry",1.4,2.8
+"Benz, Carl",7.5,15.0
+```
+
 
 ## Images for classification
 
@@ -51,3 +60,5 @@ The script should save the dataframe as a csv without index in the location spec
 [Python script]: assets/datasets/dataframe_script.py
 
 [pandas dataframe]: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
+
+[RFC 4180]: https://datatracker.ietf.org/doc/html/rfc4180
