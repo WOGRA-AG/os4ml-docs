@@ -11,7 +11,9 @@ machine learning. We're not reinventing the wheel. Whenever possible, we
 use third-party open source software.
 
 The project is in an early phase, i.e. everything is work in progress and 
-experimental. We plan to release a first demo version at the end of March.
+experimental. In the fall of 2022, we had an alpha release for a select 
+group of users. We are currently in the process of stabilizing the platform
+so that we can open it up to a wider range of users in spring 2023.
 
 ## License
 Os4ML is primarily distributed under the terms of both the MIT license
