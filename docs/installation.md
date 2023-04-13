@@ -12,14 +12,12 @@ that Os4ML runs stably on [k3d].
 With [k3d] you can do it like this, for example
 
 ```sh
-k3d cluster create --image rancher/k3s:v1.21.7-k3s1 os4ml-cluster
+git clone https://github.com/WOGRA-AG/terraform-kustomization-os4ml.git
+cd terraform-kustomization-os4ml
+k3d cluster create --config ./k3d-default.yaml
+terraform init
+terraform apply -auto-approve
 ```
-
-** REMARK: We recommend to use the k3s:v1.21.7-k3s1 image in order to avoid 
-API conflicts. **
-
-## Terraform
-This is work in progress, stay tuned till October 11th!
 
 ## GPU Support
 For sure, if you want to do machine learning, you want to use GPUs. So, what 
