@@ -21,6 +21,8 @@ Additionally, the Image column contains image data.
 Based on a databag, you can define a problem to be solved by specifying one or more output columns to be predicted.
 In the petfinder dataset example, you would typically want to predict the 'AdoptionSpeed' column.
 
+[Here][databag examples] you can find more examples that illustrate how to model your machine learning problem using the multimodal approach.
+
 ## Solver
 A Solver is an abstraction of an AI algorithm that can solve a specific problem, by training an AI model on data from a Databag to predict the specified columns.
 To explore available solvers, check out [this list][solvers].
@@ -33,6 +35,7 @@ To learn how to create a solution using a solver, check out this [tutorial][tuto
 [databag]: #Databag
 [solver]: #Solver
 [problem]: #Problem
+[databag examples]: /os4ml/examples/
 
 [tutorial]: tutorial.md
 [file formats]: file_formats.md
