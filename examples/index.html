@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://wogra.github.io/os4ml/file_formats/">
+        <link rel="canonical" href="https://wogra.github.io/os4ml/examples/">
       
       <link rel="icon" href="../assets/OS4ML_Logo_Small.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.4">
     
     
       
-        <title>File Formats - Open Space for Machine Learning</title>
+        <title>Examples - Open Space for Machine Learning</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#file-formats" class="md-skip">
+        <a href="#examples" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              File Formats
+              Examples
             
           </span>
         </div>
@@ -291,21 +291,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
-        Examples
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -318,12 +303,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          File Formats
+          Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        File Formats
+        Examples
       </a>
       
         
@@ -342,16 +327,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tabular-data" class="md-nav__link">
-    Tabular data
+  <a href="#image-classification" class="md-nav__link">
+    Image Classification
   </a>
   
-    <nav class="md-nav" aria-label="Tabular data">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-databags-for-common-machine-learning-problems" class="md-nav__link">
+    Example Databags for common Machine Learning Problems
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Databags for common Machine Learning Problems">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#csv-format" class="md-nav__link">
-    csv format
+  <a href="#image-captioning-and-text2image" class="md-nav__link">
+    Image Captioning and Text2Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-classification" class="md-nav__link">
+    Text classification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-machine-translation" class="md-nav__link">
+    Neural Machine Translation
   </a>
   
 </li>
@@ -361,24 +367,25 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#images-for-classification" class="md-nav__link">
-    Images for classification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scripts" class="md-nav__link">
-    Scripts
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file_formats/" class="md-nav__link">
+        File Formats
+      </a>
     </li>
   
 
@@ -455,36 +462,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tabular-data" class="md-nav__link">
-    Tabular data
+  <a href="#image-classification" class="md-nav__link">
+    Image Classification
   </a>
   
-    <nav class="md-nav" aria-label="Tabular data">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-databags-for-common-machine-learning-problems" class="md-nav__link">
+    Example Databags for common Machine Learning Problems
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Databags for common Machine Learning Problems">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#csv-format" class="md-nav__link">
-    csv format
+  <a href="#image-captioning-and-text2image" class="md-nav__link">
+    Image Captioning and Text2Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-classification" class="md-nav__link">
+    Text classification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-machine-translation" class="md-nav__link">
+    Neural Machine Translation
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#images-for-classification" class="md-nav__link">
-    Images for classification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scripts" class="md-nav__link">
-    Scripts
-  </a>
   
 </li>
       
@@ -502,97 +516,82 @@
                 
                   
 
-  <a href="https://github.com/WOGRA-AG/Os4ML/edit/master/docs/file_formats.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/WOGRA-AG/Os4ML/edit/master/docs/examples.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="file-formats">File formats</h1>
-<p>The following file formats are supported:</p>
-<h2 id="tabular-data">Tabular data</h2>
+<h1 id="examples">Examples</h1>
+<h2 id="image-classification">Image Classification</h2>
+<ol>
+<li>Prepare a dataset according to the <a href="/os4ml/file_formats/#images-for-classification">classification file format</a>. Make sure that all images have the same format and size.</li>
+<li>Create a databag with this dataset. This should produce a databag with two columns one for the image and the other for the label.</li>
+<li>Create a solution and choose the label column as the output column.</li>
+</ol>
+<h2 id="example-databags-for-common-machine-learning-problems">Example Databags for common Machine Learning Problems</h2>
+<p>We will give some examples of how you can model your machine learning problem using the multimodal format.</p>
+<h3 id="image-captioning-and-text2image">Image Captioning and Text2Image</h3>
 <table>
 <thead>
 <tr>
-<th>type</th>
-<th>suffix</th>
-<th>example</th>
+<th>column</th>
+<th>datatype</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>csv</td>
-<td>.csv</td>
-<td><a href="../assets/datasets/titanic.csv">Titanic dataset csv</a></td>
+<td>image</td>
+<td>image</td>
 </tr>
 <tr>
-<td>Excel</td>
-<td>.xls, .xlsx, .xlsm, .xlsb, .odf, .ods</td>
-<td><a href="../assets/datasets/titanic.xlsx">Titanic dataset excel</a></td>
+<td>description</td>
+<td>text</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>The first row contains the names of the columns.</li>
-<li>Only the first sheet of the Excel file is used.</li>
-</ul>
-<h3 id="csv-format">csv format</h3>
-<p>use standard csv files that meet the <a href="https://datatracker.ietf.org/doc/html/rfc4180">RFC 4180</a> standard, e.g. this would be a valid csv file</p>
-<pre><code>name,number,double
-&quot;Ford, Henry&quot;,1.4,2.8
-&quot;Benz, Carl&quot;,7.5,15.0
-</code></pre>
-<h2 id="images-for-classification">Images for classification</h2>
+<p>If you have a dataset with images and corresponding descriptions, you can train an image captioning model, by specifying the description as the output column.
+If you choose the image as the output column you can train a text2image model. However, this is not yet supported by our solvers, but will be a future feature.</p>
+<h3 id="text-classification">Text classification</h3>
 <table>
 <thead>
 <tr>
-<th>type</th>
-<th>suffix</th>
-<th>example</th>
+<th>column</th>
+<th>datatype</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>zip file</td>
-<td>.zip</td>
-<td><a href="../assets/datasets/mnist_test.zip">Mnist zip</a></td>
+<td>text</td>
+<td>text</td>
+</tr>
+<tr>
+<td>label</td>
+<td>categoy</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>The unpacked zip file should contain one folder (mnist_test in the example below)</li>
-<li>This folder should contain one folder for each label (0, 1)</li>
-<li>The label folders should contain the corresponding images</li>
-<li>Supported image files are: .jpg, .jpeg, .png, .tiff</li>
-</ul>
-<pre><code>mnist_test
-├── 0
-│   ├── 114.jpg
-...
-├── 1
-│   ├── 102.jpg
-│   ├── 104.jpg
-...
-</code></pre>
-<h2 id="scripts">Scripts</h2>
+<p>Using a databag with a text column and a category column, you can model text classification tasks such as sentiment analysis.</p>
+<h3 id="neural-machine-translation">Neural Machine Translation</h3>
 <table>
 <thead>
 <tr>
-<th>type</th>
-<th>suffix</th>
-<th>example</th>
+<th>column</th>
+<th>datatype</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>python script</td>
-<td>.py</td>
-<td><a href="../assets/datasets/dataframe_script.py">Python script</a></td>
+<td>languageA</td>
+<td>text</td>
+</tr>
+<tr>
+<td>languageB</td>
+<td>text</td>
 </tr>
 </tbody>
 </table>
-<p>You can also upload python scripts that create a <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">pandas dataframe</a>.
-The script should save the dataframe as a csv without index in the location specified by the <code>--output</code> arg.</p>
+<p>If you have a databag with translations from one language to another, you can train a neural machine translation model by simply selecting the desired language as the output column.</p>
 
 
 
@@ -613,7 +612,7 @@ The script should save the dataframe as a csv without index in the location spec
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../examples/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Examples" rel="prev">
+        <a href="../tutorial/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tutorial" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -622,20 +621,20 @@ The script should save the dataframe as a csv without index in the location spec
               <span class="md-footer__direction">
                 Previous
               </span>
-              Examples
+              Tutorial
             </div>
           </div>
         </a>
       
       
         
-        <a href="../solvers/" class="md-footer__link md-footer__link--next" aria-label="Next: Solvers" rel="next">
+        <a href="../file_formats/" class="md-footer__link md-footer__link--next" aria-label="Next: File Formats" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Solvers
+              File Formats
             </div>
           </div>
           <div class="md-footer__button md-icon">

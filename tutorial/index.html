@@ -287,48 +287,25 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Tutorial
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Tutorial
       </a>
       
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
-        <li class="md-nav__item">
-  <a href="#run-fast-lane" class="md-nav__link">
-    Run Fast-lane
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#download-model" class="md-nav__link">
-    Download Model
-  </a>
-  
-</li>
       
-    </ul>
+
   
-</nav>
-      
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        Examples
+      </a>
     </li>
   
 
@@ -413,28 +390,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#run-fast-lane" class="md-nav__link">
-    Run Fast-lane
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-model" class="md-nav__link">
-    Download Model
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -454,27 +409,47 @@
 
 
 <h1 id="tutorial">Tutorial</h1>
-<h2 id="run-fast-lane">Run Fast-lane</h2>
 <ol>
-<li>Open get started dialog in the bottom left</li>
-<li>Choose a name for the databag</li>
-<li>Upload the dataset file</li>
+<li>
+<p>Open get started dialog in the bottom left</p>
+<p><img alt="open fast lane" src="../assets/images/screenshots/open_fast_lane.png" /></p>
+</li>
+<li>
+<p>Choose a name for the databag</p>
+<p><img alt="create databag" src="../assets/images/screenshots/create_databag.png" /></p>
+</li>
+<li>
+<p>Upload the dataset file</p>
+<ul>
 <li>Either upload the file directly of pass a valid url to it</li>
 <li>See <a href="../file_formats/">File formats</a> for more information on the supported file formats.</li>
-<li>Proceed and wait until the dataset is uploaded and inspected (this may take a while)</li>
-<li>Select the column you want to predict</li>
-<li>Choose a name and a solver for the Solution. See <a href="../solvers/">Solvers</a> for more information on the available solvers.</li>
-<li>Wait until the solver is done</li>
+</ul>
+</li>
+<li>
+<p>Proceed and wait until the dataset is uploaded and inspected (this may take a while)</p>
+</li>
+<li>
+<p>Select the column you want to predict</p>
+<p><img alt="choose output column" src="../assets/images/screenshots/choose_output_column.png" /></p>
+</li>
+<li>
+<p>Choose a name and a solver for the Solution. See <a href="../solvers/">Solvers</a> for more information on the available solvers.</p>
+<p><img alt="create solution" src="../assets/images/screenshots/create_solution.png" /></p>
+</li>
+<li>
+<p>Wait until the solver is done</p>
+<p><img alt="solver done" src="../assets/images/screenshots/solver_done.png" /></p>
+</li>
+<li>
+<p>Go to the predictions page and open the 'Create prediction' dialog.
+Enter a name for the prediction and upload the data you want to predict.
+You download a template to see how your data should look like.</p>
+<p><img alt="create prediction" src="../assets/images/screenshots/create_prediction.png" /></p>
+</li>
+<li>
+<p>Click the predict button and wait until the prediction is done. Afterwards you can download your results.</p>
+</li>
 </ol>
-<h2 id="download-model">Download Model</h2>
-<p>After a solution is successfully created, you can download the trained model.</p>
-<p>You can load the extracted zip file with the following code to get the LudwigModel:</p>
-<pre><code class="language-python">from ludwig.api import LudwigModel
-
-path_to_extracted_zip = './model.os4ml/'
-model = LudwigModel.load(path_to_extracted_zip)
-</code></pre>
-<p>Use the <code>model.predict()</code> method to make predictions.</p>
 
 
 
@@ -511,13 +486,13 @@ model = LudwigModel.load(path_to_extracted_zip)
       
       
         
-        <a href="../file_formats/" class="md-footer__link md-footer__link--next" aria-label="Next: File Formats" rel="next">
+        <a href="../examples/" class="md-footer__link md-footer__link--next" aria-label="Next: Examples" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              File Formats
+              Examples
             </div>
           </div>
           <div class="md-footer__button md-icon">

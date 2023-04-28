@@ -304,6 +304,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    Problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#solver" class="md-nav__link">
     Solver
   </a>
@@ -335,6 +342,21 @@
     <li class="md-nav__item">
       <a href="../tutorial/" class="md-nav__link">
         Tutorial
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        Examples
       </a>
     </li>
   
@@ -434,6 +456,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    Problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#solver" class="md-nav__link">
     Solver
   </a>
@@ -468,18 +497,28 @@
 
 
 <h1 id="introduction">Introduction</h1>
-<p>Let's start with the basic Terminology of os4ml first.</p>
+<p>Let's first start with the basic terminology of os4ml. It is illustrated in the following picture:</p>
+<p><img alt="terminoloy" src="../assets/images/databag_solver_solution.png" /></p>
 <h2 id="databag">Databag</h2>
-<p>A databag is a container for your data.
-Learn how to create a databag <a href="../tutorial/">here</a> or see the different types of files you can upload <a href="../file_formats/">here</a>.</p>
+<p>A databag is a convenient container for storing your data.
+You can easily create a databag by following the instructions in this <a href="../tutorial/">tutorial</a>, or explore the various file formats you can upload <a href="../file_formats/">here</a>.
+To manage the diversity of data types, we use the concept of multimodal data.
+Think of multimodal data as a table where each column is associated with a specific datatype, and the rows represent data corresponding to these columns.</p>
+<p>The <a href="https://www.kaggle.com/c/petfinder-adoption-prediction/data">petfinder dataset</a> is an excellent example of multimodal data.
+For instance, it features Fenny, a dog(type 1) who is five years old and has been waiting for adoption for 100 days (AdoptionSpeed 4).
+The columns Type and AdoptionSpeed are categorical, the column Name contains text data, and Age is a numerical value.
+Additionally, the Image column contains image data.</p>
+<p><img alt="petfinder" src="../assets/images/petfinder.png" /></p>
+<h2 id="problem">Problem</h2>
+<p>Based on a databag, you can define a problem to be solved by specifying one or more output columns to be predicted.
+In the petfinder dataset example, you would typically want to predict the 'AdoptionSpeed' column.</p>
+<p><a href="/os4ml/examples/">Here</a> you can find more examples that illustrate how to model your machine learning problem using the multimodal approach.</p>
 <h2 id="solver">Solver</h2>
-<p>A solver is an abstraction of a specific AI algorithm.
-It trains an AI model on the data of a databag.
-<a href="../solvers/">Here</a> you can find a list of all available solvers.</p>
+<p>A Solver is an abstraction of an AI algorithm that can solve a specific problem, by training an AI model on data from a Databag to predict the specified columns.
+To explore available solvers, check out <a href="../solvers/">this list</a>.</p>
 <h2 id="solution">Solution</h2>
-<p>A run of a <a href="#Solver">solver</a> on a <a href="#Databag">databag</a> is called Solution.
-The solution stores additional information, such as the columns of the databag that get predicted.
-You can follow the <a href="../tutorial/">tutorial</a> to create one.</p>
+<p>When a <a href="#Solver">solver</a> is executed on a <a href="#Problem">problem</a>, it produces a solution that can be used to predict values for unseen data.
+To learn how to create a solution using a solver, check out this <a href="../tutorial/">tutorial</a>.</p>
 
 
 

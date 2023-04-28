@@ -289,13 +289,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#terraform" class="md-nav__link">
-    Terraform
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gpu-support" class="md-nav__link">
     GPU Support
   </a>
@@ -335,6 +328,21 @@
     <li class="md-nav__item">
       <a href="../tutorial/" class="md-nav__link">
         Tutorial
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        Examples
       </a>
     </li>
   
@@ -434,13 +442,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#terraform" class="md-nav__link">
-    Terraform
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gpu-support" class="md-nav__link">
     GPU Support
   </a>
@@ -477,12 +478,12 @@ Kubernetes distribution) in docker'. Well yes, that's what it does, and it
 does it great. We use <a href="https://k3d.io">k3d</a> for daily development. Thus, you can assume 
 that Os4ML runs stably on <a href="https://k3d.io">k3d</a>.</p>
 <p>With <a href="https://k3d.io">k3d</a> you can do it like this, for example</p>
-<pre><code class="language-sh">k3d cluster create --image rancher/k3s:v1.21.7-k3s1 os4ml-cluster
+<pre><code class="language-sh">git clone https://github.com/WOGRA-AG/terraform-kustomization-os4ml.git
+cd terraform-kustomization-os4ml
+k3d cluster create --config ./k3d-default.yaml
+terraform init
+terraform apply -auto-approve
 </code></pre>
-<p><strong> REMARK: We recommend to use the k3s:v1.21.7-k3s1 image in order to avoid 
-API conflicts. </strong></p>
-<h2 id="terraform">Terraform</h2>
-<p>This is work in progress, stay tuned till October 11th!</p>
 <h2 id="gpu-support">GPU Support</h2>
 <p>For sure, if you want to do machine learning, you want to use GPUs. So, what 
 about GPU support?</p>
