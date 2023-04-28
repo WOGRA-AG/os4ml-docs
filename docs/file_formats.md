@@ -13,7 +13,9 @@ The following file formats are supported:
 - Only the first sheet of the Excel file is used.
 
 ### csv format
-use standard csv files that meet the [RFC 4180] standard, e.g. this would be a valid csv file
+All common delimiters, including commas, colons, semicolons and tabs, are supported.
+For floating point numbers, please use dots as the decimal separator.
+Below is an example of a valid CSV file:
 
 ```
 name,number,double
@@ -61,4 +63,3 @@ The script should save the dataframe as a csv without index in the location spec
 
 [pandas dataframe]: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
 
-[RFC 4180]: https://datatracker.ietf.org/doc/html/rfc4180
