@@ -24,27 +24,34 @@ name,number,double
 ```
 
 
-## Images for classification
+## Load additional files (e.g. images)
+To load additional files such as images, create a column in the tabular dataset (csv or excel) with the file names. 
+Create a zip file of the tabular file along with the additional files.
+The zip file should contain only one csv file.
+The system will automatically detect that the column contains file names, and if they are present in the zip file, they will be loaded into your data bag.
 
 | type     | suffix | example     |
 |----------|--------|-------------|
 | zip file | .zip   | [Mnist zip] |
 
-- The unpacked zip file should contain one folder (mnist_test in the example below)
-- This folder should contain one folder for each label (0, 1)
-- The label folders should contain the corresponding images
-- Supported image files are: .jpg, .jpeg, .png, .tiff
+Example structue of a zip file:
+```
+mnist
+├── 10.jpg
+├── 20.jpg
+├── 24.jpg
+└── mnist.csv
+```
 
+Content of the mnist.csv:
 ```
-mnist_test
-├── 0
-│   ├── 114.jpg
-...
-├── 1
-│   ├── 102.jpg
-│   ├── 104.jpg
-...
+image,digit
+10.jpg,3
+20.jpg,4
+24.jpg,1
 ```
+- Supported image files are: .jpg, .jpeg, .png, .tiff
+- Currently only image files are supported, but in the future other files will be supported as well
 
 ## Scripts
 
