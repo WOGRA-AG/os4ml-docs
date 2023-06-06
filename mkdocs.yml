@@ -14,7 +14,7 @@ nav:
 theme:
   name: material
   logo: assets/logos/OS4ML_Logo_White_Large.png
-  favicon: assets/OS4ML_Logo_Small.png
+  favicon: assets/logos/OS4ML_Logo_Small.png
   palette:
   - scheme: default
     toggle:
