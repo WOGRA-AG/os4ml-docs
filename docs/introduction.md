@@ -41,6 +41,6 @@ To learn how to create a solution using a solver, check out this [tutorial][tuto
 [file formats]: file_formats.md
 [solvers]: solvers.md
 
-[terminoloy]: assets/images/databag_solver_solution.png
+[terminoloy]: assets/images/os4ml_terminology.png
 [petfinder]: assets/images/petfinder.png
 [petfinder dataset]: https://www.kaggle.com/c/petfinder-adoption-prediction/data

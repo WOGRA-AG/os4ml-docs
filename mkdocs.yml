@@ -9,6 +9,7 @@ nav:
   - Examples: examples.md
   - File Formats: file_formats.md
   - Solvers: solvers.md
+  - Transfear Learning: transfer_learning.md
   - Architecture: architecture.md
   - About Us: about_us.md
 theme:
