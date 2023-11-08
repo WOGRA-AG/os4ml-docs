@@ -1,44 +1,61 @@
 # Tutorial
 
-1. Open get started dialog in the bottom left
+Follow this guide to go step by step to get a prediction based on your data.
 
-    ![open fast lane]
+## Create a Databag
 
-2. Choose a name for the databag
+Therefore, open the create Databag dialog, give it a name and upload your data.
+You can see expected format of your data [here][File formats].
+If you don't have your own data or you just want to play around, you can use [the titanic dataset][titanic csv].
 
-    ![create databag]
+![databag create]
 
-3. Upload the dataset file
-    - Either upload the file directly of pass a valid url to it
-    - See [File formats] for more information on the supported file formats.
+Proceed and wait until the dataset is uploaded and inspected (this may take a while)
 
-4. Proceed and wait until the dataset is uploaded and inspected (this may take a while)
-5. Select the column you want to predict
+![databag done]
 
-    ![choose output column]
+## Create a Solution 
 
-6. Choose a name and a solver for the Solution. See [Solvers] for more information on the available solvers.
+Open the create solution dialog and select the databag you just created (if it isn't already selected).
+Define the [Problem] on your Databag by specifing the output and give the solution a name.
+In case of the titanic dataset choose the column `Survived`.
 
-    ![create solution]
+In the `Select input` drop-down, you could deselect some inputs to exclude them from the Solver, but for now let's just use all inputs.
+[Transfer learning] is an advanced feature, so let's use the default values and just click `Submit Solution`.
 
-7. Wait until the solver is done
+![solution create]
 
-    ![solver done]
+Currently only the [Ludwig solver] is available, but in future you will be able to select different ones. You can check the list of available solvers [here][Solvers].
 
-8. Go to the predictions page and open the 'Create prediction' dialog.
-Enter a name for the prediction and upload the data you want to predict.
-You download a template to see how your data should look like.
+Again wailt until the solution is done (this may take a while).
 
-    ![create prediction]
+![solution done]
+    
+## Create a Prediction
 
-9. Click the predict button and wait until the prediction is done. Afterwards you can download your results.
+Open the create prediction dialog and select the solution you just created (if it isn't already selected).
+Enter the name of your prediction and upload your data.
+You can download a template to see how your data should look like.
 
+![prediction create]
+
+Wait once more until the prediction is done (this may take a while).
+
+![prediction done]
+
+You can now download and inspect the results of your prediction.
+
+[Problem]: introduction.md#Problem
 [Solvers]: solvers.md
+[Ludwig solver]: solvers.md#Ludwig-Solver
 [File formats]: file_formats.md
+[Transfer learning]: transfer_learning.md
 
-[open fast lane]: assets/images/screenshots/open_fast_lane.png
-[create databag]: assets/images/screenshots/create_databag.png
-[choose output column]: assets/images/screenshots/choose_output_column.png
-[create solution]: assets/images/screenshots/create_solution.png
-[solver done]: assets/images/screenshots/solver_done.png
-[create prediction]: assets/images/screenshots/create_prediction.png
+[databag create]: assets/images/screenshots/databag_create.png
+[databag done]: assets/images/screenshots/databag_done.png
+[solution create]: assets/images/screenshots/solution_create.png
+[solution done]: assets/images/screenshots/solution_done.png
+[prediction create]: assets/images/screenshots/prediction_create.png
+[prediction done]: assets/images/screenshots/prediction_done.png
+
+[titanic csv]: assets/datasets/titanic.xlsx

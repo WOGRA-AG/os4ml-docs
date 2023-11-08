@@ -19,6 +19,8 @@ terraform init
 terraform apply -auto-approve
 ```
 
+This will install [ArgoCD] in the cluster and then ArgoCD will then take care of installing Os4ml on its own.
+
 ## GPU Support
 For sure, if you want to do machine learning, you want to use GPUs. So, what 
 about GPU support?
