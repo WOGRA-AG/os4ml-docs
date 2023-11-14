@@ -643,9 +643,10 @@ Below is an example of a valid CSV file:</p>
 </code></pre>
 <h3 id="load-additional-files-eg-images">Load additional files (e.g. images)</h3>
 <p>To load additional files such as images, create a column in the tabular dataset (csv or excel) with the file names. 
-Create a zip file of the tabular file along with the additional files.
+Create a zip file with the tabular file and the additional files.
+Pack the files directly into the zip file, do not compress the folder containing the files.
 The zip file should contain only one csv file.
-The system will automatically detect that the column contains file names, and if they are present in the zip file, they will be loaded into your data bag.</p>
+The system will automatically detect that the column contains file names, and if they are present in the zip file, they will be loaded into your databag.</p>
 <table>
 <thead>
 <tr>
@@ -663,11 +664,11 @@ The system will automatically detect that the column contains file names, and if
 </tbody>
 </table>
 <p>Example structue of a zip file:</p>
-<pre><code>mnist
-├── 10.jpg
-├── 20.jpg
-├── 24.jpg
-└── mnist.csv
+<pre><code>mnist.zip
+├─ 10.jpg
+├─ 20.jpg
+├─ 24.jpg
+└─ mnist.csv
 </code></pre>
 <p>Content of the mnist.csv:</p>
 <pre><code>image,digit
