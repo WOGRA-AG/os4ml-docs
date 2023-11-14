@@ -25,9 +25,10 @@ name,number,double
 
 ### Load additional files (e.g. images)
 To load additional files such as images, create a column in the tabular dataset (csv or excel) with the file names. 
-Create a zip file of the tabular file along with the additional files.
+Create a zip file with the tabular file and the additional files.
+Pack the files directly into the zip file, do not compress the folder containing the files.
 The zip file should contain only one csv file.
-The system will automatically detect that the column contains file names, and if they are present in the zip file, they will be loaded into your data bag.
+The system will automatically detect that the column contains file names, and if they are present in the zip file, they will be loaded into your databag.
 
 | type     | suffix | example     |
 |----------|--------|-------------|
@@ -35,11 +36,11 @@ The system will automatically detect that the column contains file names, and if
 
 Example structue of a zip file:
 ```
-mnist
-├── 10.jpg
-├── 20.jpg
-├── 24.jpg
-└── mnist.csv
+mnist.zip
+├─ 10.jpg
+├─ 20.jpg
+├─ 24.jpg
+└─ mnist.csv
 ```
 
 Content of the mnist.csv:
